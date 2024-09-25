@@ -3,15 +3,16 @@
 
 \begin{document}
 
-\title{Software Engineer \\ \large Sergei Chudov}
+\title{Sergei Chudov \\ \large Senior Software Engineer }
 \author{}
 \date{}
 \maketitle
 
 \section*{Introduction}
 \begin{quote}
-I’m a software engineer with 4+ years of experience. Now I am in Yerevan and ready for relocation or remote job.
-Currently I am learning new technologies, improving my knowledge in software development and learning English.
+I'm a software engineer with 5 years of experience. Now I am in Yerevan and ready for relocation or remote job.
+
+Currently I am learning new technologies, upgrade my knowledge in software development and learning English.
 \end{quote}
 
 \section*{Contact Information}
@@ -24,55 +25,73 @@ Currently I am learning new technologies, improving my knowledge in software dev
 \end{itemize}
 
 \section*{Work Experience}
-\subsection*{Software Engineer}
-\textit{Bostongene}, Yerevan, Armenia – (Jun 2022 - Present)
+\subsection*{Senior Software Engineer}
+\textit{Bostongene}, Yerevan, Armenia - (Jun 2022 - Present)
 \begin{itemize}
-    \item Full-stack engineer. My general role is supporting, designing and implementing healthcare projects. 
+    \item I participate in creating internal projects to optimize the work of internal customers. I am responsible for the stability of services running in Kubernetes.  
+    \item Achievements:
+    \begin{itemize}
+        \item Saved one of the key databases by writing a script \href{https://github.com/WindowGenerator/netfs_unlker}{netfs\_unlker}. This action preserved 2 weeks of work for the teams working with these databases.
+        \item Participated in gathering requirements and designing the architecture, as well as the subsequent development of this service to facilitate policy annotation billing.
+        \item Implemented best practices in our team's development process, including tests, linters, and formatters, which helped increase our productivity.
+        \item Deployed and maintained multiple production services in a Kubernetes environment, including Airflow, adapting to changing requirements and system loads.
+        \item In the shortest possible time (4 days), I developed a production library with tests and CI/CD, which included a small language for converting patient parameters and their relationships into a machine-readable format.
+    \end{itemize}
     \item Responsibilities:
     \begin{itemize}
-        \item Improve code quality
-        \item Participate in the creation of new projects
-        \item Perform algorithms
-        \item Construct data pipelines
-        \item Implement frontend/backend part of projects
-        \item Write helm charts and concourse pipelines for projects
-        \item Discuss with clients about product features
+        \item Moving bioinformatics algorithms to production
+        \item Gathering client requirements and converting them into code
+        \item Maintaining the functionality and monitoring services in Kubernetes
+        \item Writing and supporting production Python packages
+        \item Implementing frontend, backend, and pipelines in existing and new projects
+        \item Writing Helm charts and setting up CI/CD (Concourse) for projects
     \end{itemize}
     \item Stack:
     \begin{itemize}
         \item Python (FastAPI, SQLAlchemy)
         \item Linux
-        \item TypeScript, Javascript, React
-        \item Docker, Kubernetes, Helm, Concourse
-        \item RabbitMQ, Redis, PostgreSQL, Neo4j
+        \item TypeScript (JavaScript, React, Redux)
+        \item Docker, Kubernetes, Helm, Concourse, gitlab ci
+        \item RabbitMQ, Redis, PostgreSQL, Neo4j, Apache Kafka
+        \item Software Design, Software Infrastructure, Software Systems Engineering, Software Development
     \end{itemize}
 \end{itemize}
 
-\subsection*{Software Engineer}
-\textit{USSC Ldt.}, Yekaterinburg, Russia – (Oct 2019 - Mar 2022)
+\subsection*{Middle Software Engineer}
+\textit{USSC Ldt.}, Yekaterinburg, Russia - (Oct 2019 - Mar 2022)
 \begin{itemize}
-    \item Participated in the development of a product aimed at ensuring the safety of factories
+    \item Participated in the development of a system for detecting and preventing information security incidents in industrial networks.
+    \item Achievements:
+    \begin{itemize}
+        \item Simplified the implementation of user authorization, which reduced the number of bugs in this functionality.
+        \item Rewrote the complex and frequently breaking master-master interaction functionality, and covered it with tests, significantly reducing bugs.
+        \item Developed a backup service for main databases Mysql, Postgres.
+        \item Implemented index rotation in Elasticsearch.
+        \item Implemented a tool for generating TypeScript clients based on OpenAPI specifications. This reduced memory usage for these clients and improved the readability of method signatures on the client side.
+    \end{itemize}
     \item Responsibilities:
     \begin{itemize}
         \item Designed microservices in python
         \item Optimized SQL in MySQL, PostgreSQL
         \item Developed and supported of authorization
         \item Wrote Docker images to build from source
+        \item Wrote unit and integration tests
         \item Edited frontend when I didn't want to distract the frontend developers
     \end{itemize}
     \item Stack:
     \begin{itemize}
-        \item Python (aiohttp, FastAPI, Flask, SQLAlchemy)
+        \item Python (aiohttp, asyncio, FastAPI, Flask, SQLAlchemy)
         \item Linux
         \item Docker, Jenkins
-        \item TypeScript, Angular
+        \item Elasticsearch, Mysql, Postgres, RabitMQ
+        \item TypeScript (Angular, Javascript)
     \end{itemize}
 \end{itemize}
 
 \subsection*{Trainee ML Engineer}
-\textit{NPO Avtomatiki}, Yekaterinburg, Russia – (Mar 2019 - May 2019)
+\textit{NPO Avtomatiki}, Yekaterinburg, Russia - (Mar 2019 - May 2019)
 \begin{itemize}
-    \item I implemented prototype of system that allows you to identify people with high accuracy in real time, the data is created by a video camera.
+    \item Implemented prototype of system that allows you to identify people with high accuracy in real time, the data is created by a video camera.
     \item Responsibilities:
     \begin{itemize}
         \item Trained additional parts of YOLOV3 model
@@ -87,16 +106,19 @@ Currently I am learning new technologies, improving my knowledge in software dev
 
 \section*{Skills}
 \subsection*{Development}
-Python - FastAPI - aiohttp - Flask - Docker - Kubernetes - Concouse - Linux - asyncio - MySQL - PostgreSQL - Redis - RabbitMQ - Elasticsearch - Neo4j -Typescript - Angular - React
-
-\subsection*{Development in Free Time}
-golang - rust - wasm - minecraft plugins - etcd - solidity - weird bots - ML - computer vision - AR
+Python - FastAPI - aiohttp - Flask - Docker - Kubernetes - Concouse - Linux - asyncio - MySQL - PostgreSQL - Redis - RabbitMQ - Elasticsearch - Neo4j - Typescript - Angular - React - Kafka
 
 \section*{Contributions}
 \begin{itemize}
     \item \href{https://github.com/mosquito/aio-pika}{aio-pika}
     \item \href{https://github.com/astral-sh/ruff}{ruff}
     \item \href{https://github.com/langchain-ai/chat-langchain}{chat-langchain}
+\end{itemize}
+
+\section*{Pet-Projects}
+\begin{itemize}
+    \item \href{https://github.com/WindowGenerator/starlette-responses-kit}{starlette-responses-kit} - extension containing custom responses for starlette.
+    \item \href{https://github.com/WindowGenerator/netfs_unlker}{netfs\_unlker} - netfs\_unlcker is a Rust library and command-line interface designed to provide unlock 'fcntl' shared locks in netapp's
 \end{itemize}
 
 \section*{Languages}
