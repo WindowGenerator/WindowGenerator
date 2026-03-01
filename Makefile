@@ -2,11 +2,17 @@ TEXI2PDF?=texi2pdf
 PDFOPENER?=gs
 
 RESUME_PATH=resume
-OUTPUT_PDF=$(RESUME_PATH)/Chudov_Sergei_CV.pdf
+CV_PDF=$(RESUME_PATH)/Chudov_Sergei_CV.pdf
+RESUME_PDF=$(RESUME_PATH)/Chudov_Sergei_Resume.pdf
 
 render-cv:
-	$(TEXI2PDF) $(RESUME_PATH)/cv.tex --output=$(OUTPUT_PDF) --pdf
-	cp $(RESUME_PATH)/cv.pdf $(RESUME_PATH)/Chudov_Sergei_CV.pdf
+	$(TEXI2PDF) $(RESUME_PATH)/cv.tex --output=$(CV_PDF) --pdf
 
-open-pdf:
-	gs $(OUTPUT_PDF)
+render-resume:
+	$(TEXI2PDF) $(RESUME_PATH)/resume.tex --output=$(RESUME_PDF) --pdf
+
+open-cv:
+	gs $(CV_PDF)
+
+open-resume:
+	gs $(RESUME_PDF)
