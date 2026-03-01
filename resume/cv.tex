@@ -1,154 +1,148 @@
-\documentclass{article}
-\usepackage{hyperref}
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[hidelinks]{hyperref}
 \usepackage{geometry}
- \geometry{
- a4paper,
- total={170mm,257mm},
- left=20mm,
- top=20mm,
- }
+\usepackage{xcolor}
+\usepackage[expansion=false]{microtype}
+
+\geometry{a4paper, top=12mm, bottom=12mm, left=16mm, right=16mm}
+
+% ── Palette ──────────────────────────────────────────────────────────────────
+\definecolor{accent}{RGB}{15,75,155}
+\definecolor{muted}{RGB}{100,100,100}
+\definecolor{light}{RGB}{240,245,255}
+
+% ── Hyperlinks ────────────────────────────────────────────────────────────────
+\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent}
+
+% ── List compression ──────────────────────────────────────────────────────────
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\renewcommand{\labelitemi}{\textcolor{accent}{\textbullet}}
+\newenvironment{cvlist}{%
+  \begin{itemize}%
+  \setlength{\itemsep}{1pt}%
+  \setlength{\topsep}{2pt}%
+  \setlength{\parsep}{0pt}%
+  \setlength{\leftmargin}{1.3em}%
+  \small%
+}{%
+  \end{itemize}%
+}
+
+% ── Section heading ───────────────────────────────────────────────────────────
+\newcommand{\cvsection}[1]{%
+  \vspace{9pt}%
+  {\color{accent}\bfseries\large #1}%
+  \par\nobreak\vspace{-4pt}%
+  {\color{accent}\rule{\linewidth}{0.7pt}}%
+  \vspace{4pt}%
+}
+
+% ── Job entry ─────────────────────────────────────────────────────────────────
+\newcommand{\job}[3]{%
+  \textbf{#1} — \textit{#2}\hfill{\small\color{muted}#3}%
+  \par\vspace{1pt}%
+}
+
+% ── Profile summary box ───────────────────────────────────────────────────────
+\newcommand{\profilebox}[1]{%
+  \vspace{2pt}%
+  \noindent\colorbox{light}{%
+    \parbox{\dimexpr\linewidth-2\fboxsep\relax}{%
+      \vspace{5pt}\small #1\vspace{5pt}%
+    }%
+  }%
+  \vspace{2pt}%
+}
+
+% ── Skill category row ────────────────────────────────────────────────────────
+\newcommand{\skillrow}[2]{%
+  \textcolor{accent}{\small\textbf{#1}}\enspace\textcolor{muted}{\small|}\enspace{\small #2}\\[2pt]%
+}
 
 \begin{document}
+\pagestyle{empty}
 
-\title{Sergei Chudov \\ \large Lead / Senior Software Engineer }
-\author{}
-\date{}
-\maketitle
+% ── Header ───────────────────────────────────────────────────────────────────
+\begin{center}
+  {\fontsize{26}{30}\selectfont\textbf{Sergei Chudov}}\\[4pt]
+  {\large\color{muted}Lead / Senior Software Engineer}\\[6pt]
+  \small
+  \href{mailto:chudov42@gmail.com}{chudov42@gmail.com}\enspace\textcolor{muted}{·}\enspace
+  \href{https://linkedin.com/in/window-generator}{linkedin}\enspace\textcolor{muted}{·}\enspace
+  \href{https://github.com/WindowGenerator}{github}\enspace\textcolor{muted}{·}\enspace
+  \href{https://t.me/WidowGenerator}{telegram}\enspace\textcolor{muted}{·}\enspace
+  +374\,91\,186\,658\enspace\textcolor{muted}{·}\enspace
+  Yerevan, Armenia
+\end{center}
 
-\section*{Introduction}
-\begin{quote}
-I'm a software engineer with 5 years of experience. Now I am in Yerevan and ready for relocation or remote job.
+{\color{accent}\rule{\linewidth}{1.2pt}}
+\vspace{2pt}
 
-Currently I am learning new technologies, upgrade my knowledge in software development and learning English.
-\end{quote}
+\profilebox{Senior/Lead engineer with \textbf{6 years} of experience building production services,
+infrastructure tooling, and bioinformatics pipelines.
+Strong Python and Kubernetes background. Track record of owning incidents end-to-end,
+shipping internal SDKs, and driving team-wide engineering standards.
+Open to relocation or remote.}
 
-\section*{Contact Information}
-\begin{itemize}
-    \item Email address: \href{mailto:chudov42@gmail.com}{chudov42@gmail.com}
-    \item LinkedIn: \href{https://www.linkedin.com/in/window-generator}{linkedin.com/in/window-generator}
-    \item Github: \href{https://github.com/WindowGenerator}{github.com/WindowGenerator}
-    \item Phone: +37491186658
-    \item Telegram: \href{https://t.me/WidowGenerator}{@WindowGenerator}
-\end{itemize}
+% ── Experience ───────────────────────────────────────────────────────────────
+\cvsection{Experience}
 
-\section*{Work Experience}
-\subsection*{Senior Software Engineer}
-\textit{Bostongene}, Yerevan, Armenia - (Jun 2022 - Present)
-\begin{itemize}
-    \item I participate in creating internal projects to optimize the work of internal customers. I am responsible for the stability of services running in Kubernetes.  
-    \item Achievements:
-    \begin{itemize}
-        \item Saved one of the key databases by writing a script \href{https://github.com/WindowGenerator/netfs_unlker}{netfs\_unlker}. This action preserved 2 weeks of work for the teams working with these databases.
-        \item Participated in gathering requirements and designing the architecture, as well as the subsequent development of this service to facilitate policy annotation billing.
-        \item Implemented best practices in our team's development process, including tests, linters, and formatters, which helped increase our productivity.
-        \item Deployed and maintained multiple production services in a Kubernetes environment, including Airflow, adapting to changing requirements and system loads.
-        \item In the shortest possible time (4 days), I developed a production library with tests and CI/CD, which included a small language for converting patient parameters and their relationships into a machine-readable format.
-    \end{itemize}
-    \item Responsibilities:
-    \begin{itemize}
-        \item Moving bioinformatics algorithms to production
-        \item Gathering client requirements and converting them into code
-        \item Maintaining the functionality and monitoring services in Kubernetes
-        \item Writing and supporting production Python packages
-        \item Implementing frontend, backend, and pipelines in existing and new projects
-        \item Writing Helm charts and setting up CI/CD (Concourse) for projects
-    \end{itemize}
-    \item Stack:
-    \begin{itemize}
-        \item Python (FastAPI, SQLAlchemy)
-        \item Linux
-        \item TypeScript (JavaScript, React, Redux)
-        \item Docker, Kubernetes, Helm, Concourse, gitlab ci
-        \item RabbitMQ, Redis, PostgreSQL, Neo4j, Apache Kafka
-        \item Software Design, Software Infrastructure, Software Systems Engineering, Software Development
-    \end{itemize}
-\end{itemize}
+\job{Lead / Senior Software Engineer}{Bostongene, Yerevan}{Jun 2022 – Present}
+\begin{cvlist}
+  \item Owned production services (FastAPI, Airflow, pipelines) in Kubernetes; led incident response across \textbf{200+ production issues} and capacity planning.
+  \item Wrote \href{https://github.com/WindowGenerator/netfs_unlker}{\texttt{netfs\_unlker}} (Rust) to recover a locked NetApp DB — saved \textbf{2 weeks of work} across multiple teams.
+  \item Delivered a patient-parameter DSL library with tests and CI/CD in \textbf{4 days}.
+  \item Led end-to-end design and delivery of a policy-annotation billing service (requirements → architecture → production).
+  \item Introduced team-wide linting, formatting, and test standards — reduced review friction and bug rate.
+  \item Migrated on-prem storage (ONTAP) to AWS EBS and replaced static AWS credentials with IRSA roles — reduced cloud storage costs and eliminated credential exposure risk for a regulated medical data platform.
+  \item Shipped an internal Python SDK for genomic cohort data access adopted by data science teams, enabling analyst self-service and reducing ad-hoc engineering support.
+  \item \textbf{Stack:} Python · FastAPI · SQLAlchemy · asyncio · Airflow · TypeScript · React · Redux · Docker · Kubernetes · Helm · Concourse · GitLab CI · Vault · PostgreSQL · Neo4j · Redis · RabbitMQ · Kafka
+\end{cvlist}
 
-\subsection*{Middle Software Engineer}
-\textit{USSC Ldt.}, Yekaterinburg, Russia - (Oct 2019 - Mar 2022)
-\begin{itemize}
-    \item Participated in the development of a system for detecting and preventing information security incidents in industrial networks.
-    \item Achievements:
-    \begin{itemize}
-        \item Simplified the implementation of user authorization, which reduced the number of bugs in this functionality.
-        \item Rewrote the complex and frequently breaking master-master interaction functionality, and covered it with tests, significantly reducing bugs.
-        \item Developed a backup service for main databases Mysql, Postgres.
-        \item Implemented index rotation in Elasticsearch.
-        \item Implemented a tool for generating TypeScript clients based on OpenAPI specifications. This reduced memory usage for these clients and improved the readability of method signatures on the client side.
-    \end{itemize}
-    \item Responsibilities:
-    \begin{itemize}
-        \item Designed microservices in python
-        \item Optimized SQL in MySQL, PostgreSQL
-        \item Developed and supported of authorization
-        \item Wrote Docker images to build from source
-        \item Wrote unit and integration tests
-        \item Edited frontend when I didn't want to distract the frontend developers
-    \end{itemize}
-    \item Stack:
-    \begin{itemize}
-        \item Python (aiohttp, asyncio, FastAPI, Flask, SQLAlchemy)
-        \item Linux
-        \item Docker, Jenkins
-        \item Elasticsearch, Mysql, Postgres, RabitMQ
-        \item TypeScript (Angular, Javascript)
-    \end{itemize}
-\end{itemize}
+\vspace{4pt}
+\job{Middle Software Engineer}{USSC Ltd., Yekaterinburg}{Oct 2019 – Mar 2022}
+\begin{cvlist}
+  \item Built a system for detecting and preventing security incidents in ICS/industrial networks.
+  \item Rewrote master-master replication module with full test coverage, eliminating a class of recurring outages.
+  \item Created an OpenAPI→TypeScript client generator; reduced bundle memory and improved API ergonomics.
+  \item Built MySQL/Postgres backup service and Elasticsearch index-rotation tooling.
+  \item \textbf{Stack:} Python · FastAPI · aiohttp · Flask · SQLAlchemy · TypeScript · Angular · Docker · Jenkins · PostgreSQL · MySQL · Elasticsearch · RabbitMQ
+\end{cvlist}
 
-\subsection*{Trainee ML Engineer}
-\textit{NPO Avtomatiki}, Yekaterinburg, Russia - (Mar 2019 - May 2019)
-\begin{itemize}
-    \item Implemented prototype of system that allows you to identify people with high accuracy in real time, the data is created by a video camera.
-    \item Responsibilities:
-    \begin{itemize}
-        \item Trained additional parts of YOLOV3 model
-        \item Optimized of YOLOV3 performance on weak hardware
-        \item Selected a ML model for object recognition
-    \end{itemize}
-    \item Stack:
-    \begin{itemize}
-        \item Python, tensorflow, keras, sklearn, Multiprocessing on Python
-    \end{itemize}
-\end{itemize}
+\vspace{4pt}
+\job{Trainee ML Engineer}{NPO Avtomatiki, Yekaterinburg}{Mar 2019 – May 2019}
+\begin{cvlist}
+  \item Prototyped real-time face identification from CCTV using YOLOv3; optimised inference on low-power hardware.
+  \item \textbf{Stack:} Python · TensorFlow · Keras · scikit-learn
+\end{cvlist}
 
-\section*{Skills}
-\subsection*{Development}
-Python - FastAPI - aiohttp - Flask - Docker - Kubernetes - Concouse - Linux - asyncio - MySQL - PostgreSQL - Redis - RabbitMQ - Elasticsearch - Neo4j - Typescript - Angular - React - Kafka
+% ── Skills ───────────────────────────────────────────────────────────────────
+\cvsection{Skills}
+\skillrow{Backend}{Python · FastAPI · asyncio · SQLAlchemy · golang}
+\skillrow{Infrastructure}{Docker · Kubernetes · Helm · Linux · CI/CD (Concourse, GitLab CI, Jenkins)}
+\skillrow{Frontend}{TypeScript · React · Angular}
+\skillrow{Data}{PostgreSQL · MySQL · Redis · RabbitMQ · Kafka · Elasticsearch · Neo4j}
 
-\section*{Contributions}
-\begin{itemize}
-    \item \href{https://github.com/mosquito/aio-pika}{aio-pika}
-    \item \href{https://github.com/astral-sh/ruff}{ruff}
-    \item \href{https://github.com/langchain-ai/chat-langchain}{chat-langchain}
-\end{itemize}
+% ── Open Source & Projects ───────────────────────────────────────────────────
+\cvsection{Open Source \& Projects}
+\begin{cvlist}
+  \item Contributions: \href{https://github.com/mosquito/aio-pika}{\texttt{aio-pika}} \textcolor{muted}{·} \href{https://github.com/astral-sh/ruff}{\texttt{ruff}} \textcolor{muted}{·} \href{https://github.com/langchain-ai/chat-langchain}{\texttt{chat-langchain}}
+  \item \href{https://github.com/WindowGenerator/starlette-responses-kit}{\texttt{starlette-responses-kit}} — custom Starlette response types
+  \item \href{https://github.com/WindowGenerator/netfs_unlker}{\texttt{netfs\_unlker}} — Rust CLI to unlock \texttt{fcntl} shared locks on NetApp volumes
+\end{cvlist}
 
-\section*{Pet-Projects}
-\begin{itemize}
-    \item \href{https://github.com/WindowGenerator/starlette-responses-kit}{starlette-responses-kit} - extension containing custom responses for starlette.
-    \item \href{https://github.com/WindowGenerator/netfs_unlker}{netfs\_unlker} - netfs\_unlcker is a Rust library and command-line interface designed to provide unlock 'fcntl' shared locks in netapp's
-\end{itemize}
+% ── Education & Languages ────────────────────────────────────────────────────
+\cvsection{Education \& Languages}
+\textbf{Ural State Technical University} — B.Eng. Design \& Technology of Electronic Facilities
+\hfill{\small\color{muted}2015 – 2020}\\
+\small
+Coursera: \href{https://www.coursera.org/learn/algorithms-part1}{Algorithms Part I} (2020)
+\textcolor{muted}{·}
+\href{https://www.coursera.org/learn/vvedenie-mashinnoe-obuchenie}{Intro to Machine Learning} (2021)
 
-\section*{Languages}
-\subsection*{Russian}
-Native speaker 
-\subsection*{English}
-B1 
-
-\section*{Education}
-\subsection*{Ural State Technical University}
-\subsubsection*{(Bachelor of Science (Unfinished))}
-Sep 2015 - Oct 2017
-Radiophysicist
-
-\subsubsection*{(Bachelor of Engineering)}
-Oct 2017 - Jul 2020
-Design and Technology of Electronic Facilities
-
-\subsection*{Coursera}
-Aug 2020 - Aug 2020
-\href{https://www.coursera.org/learn/algorithms-part1}{Algorithms, Part I}
-
-Aug 2021 - Sep 2021
-\href{https://www.coursera.org/learn/vvedenie-mashinnoe-obuchenie}{Introduction to Machine Learning}
+\vspace{4pt}
+Russian — native \quad\textcolor{muted}{|}\quad English — B1
 
 \end{document}

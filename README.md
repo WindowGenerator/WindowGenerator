@@ -6,7 +6,7 @@ I'm a Software Engineer, primarily focusing on backend development using Python 
 - 💼 Currently at BostonGene
 - 🌐 Exploring Rust and enhancing my English skills
 - 💌 Reach out to me at: chudov42@gmail.com
-- 📑 Discover more about my professional journey: [CV](#)
+- 📑 Discover more about my professional journey: [CV](./resume/Chudov_Sergei_CV.pdf)
 
 ### Connect with Me:
 
