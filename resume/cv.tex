@@ -8,12 +8,11 @@
 \geometry{a4paper, top=12mm, bottom=12mm, left=16mm, right=16mm}
 
 % ── Palette ──────────────────────────────────────────────────────────────────
-\definecolor{accent}{RGB}{15,75,155}
-\definecolor{muted}{RGB}{100,100,100}
-\definecolor{light}{RGB}{240,245,255}
+\definecolor{accent}{RGB}{0,0,0}
+\definecolor{muted}{RGB}{85,85,85}
 
 % ── Hyperlinks ────────────────────────────────────────────────────────────────
-\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent}
+\hypersetup{colorlinks=false, pdfborder={0 0 0}}
 
 % ── List compression ──────────────────────────────────────────────────────────
 \setlength{\parindent}{0pt}
@@ -33,9 +32,9 @@
 % ── Section heading ───────────────────────────────────────────────────────────
 \newcommand{\cvsection}[1]{%
   \vspace{9pt}%
-  {\color{accent}\bfseries\large #1}%
+  {\bfseries\large #1}%
   \par\nobreak\vspace{-4pt}%
-  {\color{accent}\rule{\linewidth}{0.7pt}}%
+  \rule{\linewidth}{0.5pt}%
   \vspace{4pt}%
 }
 
@@ -48,11 +47,7 @@
 % ── Profile summary box ───────────────────────────────────────────────────────
 \newcommand{\profilebox}[1]{%
   \vspace{2pt}%
-  \noindent\colorbox{light}{%
-    \parbox{\dimexpr\linewidth-2\fboxsep\relax}{%
-      \vspace{5pt}\small #1\vspace{5pt}%
-    }%
-  }%
+  {\small #1}%
   \vspace{2pt}%
 }
 
@@ -67,63 +62,79 @@
 % ── Header ───────────────────────────────────────────────────────────────────
 \begin{center}
   {\fontsize{26}{30}\selectfont\textbf{Sergei Chudov}}\\[4pt]
-  {\large\color{muted}Lead / Senior Software Engineer}\\[6pt]
+  {\large\color{muted}Software Engineer}\\[6pt]
   \small
   \href{mailto:chudov42@gmail.com}{chudov42@gmail.com}\enspace\textcolor{muted}{·}\enspace
-  \href{https://linkedin.com/in/window-generator}{linkedin}\enspace\textcolor{muted}{·}\enspace
-  \href{https://github.com/WindowGenerator}{github}\enspace\textcolor{muted}{·}\enspace
-  \href{https://t.me/WidowGenerator}{telegram}\enspace\textcolor{muted}{·}\enspace
+  \href{https://www.linkedin.com/in/chudov-sergei}{linkedin.com/in/chudov-sergei}\enspace\textcolor{muted}{·}\enspace
+  \href{https://github.com/WindowGenerator}{github.com/WindowGenerator}\enspace\textcolor{muted}{·}\enspace
+  \href{https://t.me/WindowGenerator}{telegram}\enspace\textcolor{muted}{·}\enspace
   +374\,91\,186\,658\enspace\textcolor{muted}{·}\enspace
   Yerevan, Armenia
 \end{center}
 
-{\color{accent}\rule{\linewidth}{1.2pt}}
+\rule{\linewidth}{0.8pt}
 \vspace{2pt}
 
-\profilebox{Senior/Lead engineer with \textbf{6 years} of experience building production services,
-infrastructure tooling, and bioinformatics pipelines.
-Strong Python and Kubernetes background. Track record of owning incidents end-to-end,
-shipping internal SDKs, and driving team-wide engineering standards.
-Open to relocation or remote.}
+\cvsection{Summary}
+\profilebox{Software Engineer with \textbf{7+ years} of experience building backend services,
+data pipelines, and production systems. Strong expertise in Python, Kubernetes,
+microservices, and DevOps practices. Experienced in taking services from requirements
+through implementation, deployment, monitoring, and production support. Contributed to
+open source projects including ruff, aio-pika, and chat-langchain. Background includes
+bioinformatics, security systems, and cloud-native infrastructure.}
 
 % ── Experience ───────────────────────────────────────────────────────────────
 \cvsection{Experience}
 
-\job{Lead / Senior Software Engineer}{Bostongene, Yerevan}{Jun 2022 – Present}
+\job{Lead Software Engineer}{BostonGene, Yerevan}{Mar 2025 – Present}
 \begin{cvlist}
-  \item Owned production services (FastAPI, Airflow, pipelines) in Kubernetes; led incident response across \textbf{200+ production issues} and capacity planning.
-  \item Wrote \href{https://github.com/WindowGenerator/netfs_unlker}{\texttt{netfs\_unlker}} (Rust) to recover a locked NetApp DB — saved \textbf{2 weeks of work} across multiple teams.
-  \item Delivered a patient-parameter DSL library with tests and CI/CD in \textbf{4 days}.
-  \item Led end-to-end design and delivery of a policy-annotation billing service (requirements → architecture → production).
-  \item Introduced team-wide linting, formatting, and test standards — reduced review friction and bug rate.
-  \item Migrated on-prem storage (ONTAP) to AWS EBS and replaced static AWS credentials with IRSA roles — reduced cloud storage costs and eliminated credential exposure risk for a regulated medical data platform.
-  \item Shipped an internal Python SDK for genomic cohort data access adopted by data science teams, enabling analyst self-service and reducing ad-hoc engineering support.
-  \item \textbf{Stack:} Python · FastAPI · SQLAlchemy · asyncio · Airflow · TypeScript · React · Redux · Docker · Kubernetes · Helm · Concourse · GitLab CI · Vault · PostgreSQL · Neo4j · Redis · RabbitMQ · Kafka
+  \item Develop workflow tools for cross-functional teams, owning requirements, backend implementation, deployment, and production support.
+  \item Maintain reliability of Kubernetes-based production services through monitoring, operational support, and load-related adjustments.
+  \item Led design and delivery of a backend billing service for annotation workflows.
+  \item Wrote \href{https://github.com/WindowGenerator/netfs_unlker}{\texttt{netfs\_unlker}} (Rust) to recover a locked NetApp DB, saving \textbf{2 weeks of work} across multiple teams.
+  \item Delivered an initial production Python library with tests and CI/CD in \textbf{4 days}, including a small language for converting patient parameters and relationships into machine-readable format.
+  \item Introduced team-wide testing, linting, and formatting standards, improving development consistency and reducing avoidable rework.
+  \item \textbf{Stack:} Python · FastAPI · asyncio · Airflow · Luigi · TypeScript · React · Docker · Kubernetes · Helm · Concourse · GitLab CI · Vault · Prometheus · Kibana/Vector · PostgreSQL · RabbitMQ
 \end{cvlist}
 
 \vspace{4pt}
-\job{Middle Software Engineer}{USSC Ltd., Yekaterinburg}{Oct 2019 – Mar 2022}
+\job{Senior Software Engineer}{BostonGene, Yerevan}{Jun 2022 – Mar 2025}
 \begin{cvlist}
-  \item Built a system for detecting and preventing security incidents in ICS/industrial networks.
-  \item Rewrote master-master replication module with full test coverage, eliminating a class of recurring outages.
-  \item Created an OpenAPI→TypeScript client generator; reduced bundle memory and improved API ergonomics.
-  \item Built MySQL/Postgres backup service and Elasticsearch index-rotation tooling.
+  \item Productionized bioinformatics algorithms and data pipelines by implementing backend services, frontend changes, and pipeline integrations.
+  \item Centralized logging for \textbf{10+ services} using Vector and Kibana, improving incident investigation across backend teams.
+  \item Designed migration from static AWS keys to IRSA and Vault, reducing credential leakage risk and aligning services with access policies.
+  \item Built shared integration libraries and an internal Python SDK with documentation and CI/CD, improving reuse across backend services.
+  \item Improved reliability of Kubernetes-based pipeline execution by refining Luigi logging, scheduler behavior, and worker failure handling.
+  \item Wrote Helm charts and configured CI/CD pipelines with Concourse and GitLab CI for production projects.
+  \item \textbf{Stack:} Python · FastAPI · SQLAlchemy · asyncio · Luigi · Airflow · TypeScript · React · Redux · Docker · Kubernetes · Helm · Concourse · GitLab CI · Vault · Prometheus · Kibana/Vector · PostgreSQL · Neo4j · Redis · RabbitMQ · Kafka
+\end{cvlist}
+
+\vspace{4pt}
+\job{Software Engineer}{USSC Ltd., Yekaterinburg}{Oct 2019 – Mar 2022}
+\begin{cvlist}
+  \item Built backend components for a system detecting and preventing information-security incidents in industrial networks.
+  \item Refactored authorization logic to simplify permission handling and reduce recurring authorization defects.
+  \item Rewrote complex master-master interaction functionality and covered it with tests, reducing recurring failures.
+  \item Created an OpenAPI-to-TypeScript client generator, reducing generated client memory usage and improving client-side method signatures.
+  \item Built MySQL/PostgreSQL backup service and Elasticsearch index-rotation tooling.
+  \item Designed Python microservices, optimized SQL in MySQL/PostgreSQL, wrote Docker images, and maintained unit and integration tests.
   \item \textbf{Stack:} Python · FastAPI · aiohttp · Flask · SQLAlchemy · TypeScript · Angular · Docker · Jenkins · PostgreSQL · MySQL · Elasticsearch · RabbitMQ
 \end{cvlist}
 
 \vspace{4pt}
 \job{Trainee ML Engineer}{NPO Avtomatiki, Yekaterinburg}{Mar 2019 – May 2019}
 \begin{cvlist}
-  \item Prototyped real-time face identification from CCTV using YOLOv3; optimised inference on low-power hardware.
+  \item Prototyped a real-time face identification system from video camera data using YOLOv3.
+  \item Trained additional YOLOv3 model components, optimized inference on low-power hardware, and evaluated object-recognition models.
   \item \textbf{Stack:} Python · TensorFlow · Keras · scikit-learn
 \end{cvlist}
 
 % ── Skills ───────────────────────────────────────────────────────────────────
 \cvsection{Skills}
-\skillrow{Backend}{Python · FastAPI · asyncio · SQLAlchemy · golang}
-\skillrow{Infrastructure}{Docker · Kubernetes · Helm · Linux · CI/CD (Concourse, GitLab CI, Jenkins)}
-\skillrow{Frontend}{TypeScript · React · Angular}
-\skillrow{Data}{PostgreSQL · MySQL · Redis · RabbitMQ · Kafka · Elasticsearch · Neo4j}
+\skillrow{Languages}{Python · Go · Rust · TypeScript · SQL}
+\skillrow{Backend}{FastAPI · aiohttp · Flask · asyncio · SQLAlchemy · microservices}
+\skillrow{Infrastructure}{Docker · Kubernetes · Helm · Linux · CI/CD (Concourse, GitLab CI, Jenkins) · Prometheus · Kibana/Vector · Vault}
+\skillrow{Data}{PostgreSQL · MySQL · Redis · RabbitMQ · Kafka · Elasticsearch · Neo4j · Luigi · Airflow · S3}
 
 % ── Open Source & Projects ───────────────────────────────────────────────────
 \cvsection{Open Source \& Projects}
@@ -133,16 +144,21 @@ Open to relocation or remote.}
   \item \href{https://github.com/WindowGenerator/netfs_unlker}{\texttt{netfs\_unlker}} — Rust CLI to unlock \texttt{fcntl} shared locks on NetApp volumes
 \end{cvlist}
 
-% ── Education & Languages ────────────────────────────────────────────────────
-\cvsection{Education \& Languages}
+% ── Education ────────────────────────────────────────────────────────────────
+\cvsection{Education}
 \textbf{Ural State Technical University} — B.Eng. Design \& Technology of Electronic Facilities
-\hfill{\small\color{muted}2015 – 2020}\\
+\hfill{\small\color{muted}2015 – 2020}
+
+% ── Certifications & Courses ─────────────────────────────────────────────────
+\cvsection{Certifications \& Courses}
 \small
 Coursera: \href{https://www.coursera.org/learn/algorithms-part1}{Algorithms Part I} (2020)
 \textcolor{muted}{·}
 \href{https://www.coursera.org/learn/vvedenie-mashinnoe-obuchenie}{Intro to Machine Learning} (2021)
 
-\vspace{4pt}
-Russian — native \quad\textcolor{muted}{|}\quad English — B1
+% ── Languages ────────────────────────────────────────────────────────────────
+\cvsection{Languages}
+\small
+Russian — native \quad\textcolor{muted}{|}\quad English — professional working
 
 \end{document}
